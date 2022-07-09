@@ -1,7 +1,20 @@
 body {
-  background: linear-gradient(to bottom, #d6dee0, #6399a6);
-  margin: 0 auto;
-  padding: 5%;
+  background-color:  #d6dee0;
+}
+.application-body-wrapper {  
+  width: 60%;
+  margin: 30px auto;
+}
+.application-body {
+  padding: 30px;  
+  background-image: linear-gradient(
+    0deg,
+     #c5e2ea 23%,
+     #8fbfcb 55%,
+     #638b95 88%    
+  );
+  box-shadow: rgba(177, 161, 173, 0.493) 0px 8px 8px 0;
+  border-radius: 10px;
   color: rgba(21, 35, 36, 0.836);
 }
 h1 {
@@ -38,20 +51,24 @@ h4 {
 .col1 {
   display: block;
   border-radius: 20px;
+  border-color: #8fbfcb;
   text-align: left;
   width: 60%;
   margin: 1em;
   padding: 0.5em;
   background-color: rgba(95, 158, 160, 0.027);
+  font-size: 30pt;
 }
 .col2 {
   display: block;
   border-radius: 20px;
-  width: 30%;
+  border-color: #8fbfcb;
   text-align: right;
+  width: 30%;
   margin: 1em;
   padding: 0.5em;
   background-color: rgba(95, 158, 160, 0.027);
+  font-size: 30pt;
 }
 
 .formSearch {
@@ -64,9 +81,8 @@ h4 {
   border: none;
   border-radius: 100px;
   outline: none;
-  padding: 10px;
   margin-left: 3em;
-  font-size: 1em;
+  font-size: 2em;
 }
 
 .search-button {
@@ -75,9 +91,8 @@ h4 {
   border: none;
   border-radius: 100px;
   outline: none;
-  padding: 10px;
   margin-left: 1em;
-  font-size: 1em;
+  font-size: 2em;
 }
 .search-button-geo {
   width: 25%;
@@ -85,20 +100,22 @@ h4 {
   border: none;
   border-radius: 100px;
   outline: none;
-  padding: 10px;
   margin-left: 1em;
-  font-size: 1em;
+  font-size: 2em;
 }
 h5{
   text-align: center;
   padding: 1em;
-  color:#fbf7e7;
+  color:#638b95;
 }
 .color-link { 
   color: #fdd020;   
   text-decoration: none;
 }
-a:hover {
-  color:#fbf7e7; /* Цвет ссылки при наведении на нее курсора мыши */  
+.color-link:hover {
+  color:#638b95; /* Цвет ссылки при наведении на нее курсора мыши */  
   text-decoration: underline; /* Добавляем подчеркивание */
+}
+.color-link-temp {
+  color:beige;
 }
