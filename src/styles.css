@@ -89,3 +89,16 @@ h4 {
   margin-left: 1em;
   font-size: 1em;
 }
+h5{
+  text-align: center;
+  padding: 1em;
+  color:#fbf7e7;
+}
+.color-link { 
+  color: #fdd020;   
+  text-decoration: none;
+}
+a:hover {
+  color:#fbf7e7; /* Цвет ссылки при наведении на нее курсора мыши */  
+  text-decoration: underline; /* Добавляем подчеркивание */
+}
