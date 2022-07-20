@@ -26,7 +26,7 @@ function displayTemperature(response) {
  
   let descriptionElement = document.querySelector(".weather");
   descriptionElement.innerHTML = response.data.weather[0].description;
-  
+
   let humidityElement = document.querySelector(".humidity");
   console.log(response.data.main.humidity);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -96,5 +96,31 @@ let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes(); // 0,1,2,
 let hourses = (date.getHours() < 10 ? "0" : "") + date.getHours();
 let h2 = document.querySelector("h2");
 h2.innerHTML = ` ${days[day]}    ${hourses}:${minutes}`;
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ];
+  days.forEach(function(day){
+forecastHTML = forecastHTML +
+      ` 
+      <ul class="list-group list-group-horizontal-sm">
+      <li class="list-group-item col1">
+      <img src="images/image2.png" class="imgSun" /> Mon-Sun
+      </li>
+      <li class="list-group-item col2">25°/14°</li>
+      </ul>
+      `;
 
+  })
+  
+  forecastElement.innerHTML = forecastHTML;
+}
 search("Estoril");
+displayForecast();
