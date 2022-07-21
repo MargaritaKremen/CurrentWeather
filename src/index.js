@@ -27,7 +27,7 @@ function displayForecast(response){
    let forecastElement = document.querySelector("#forecast");
    let forecastHTML = "";
   
-   days.forEach(function (forecastDay, index){
+   forecast.forEach(function (forecastDay, index){
  forecastHTML = forecastHTML +
        ` 
        <ul class="list-group list-group-horizontal-sm">
