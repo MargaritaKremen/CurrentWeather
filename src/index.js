@@ -27,14 +27,14 @@ function displayForecast(response){
    let forecastElement = document.querySelector("#forecast");
    let forecastHTML = "";
   
-   days.forEach(function(forecastDay){
+   days.forEach(function (forecastDay, index){
  forecastHTML = forecastHTML +
        ` 
        <ul class="list-group list-group-horizontal-sm">
        <li class="list-group-item col1">
        <img src="http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
-      }@2x.png" /> ${forecastDay.dt}
+      }@2x.png" />  ${formatDay(forecastDay.dt)}
        </li>
        <li class="list-group-item col2">${Math.round(
         forecastDay.temp.max
@@ -139,7 +139,8 @@ let days = [
   "Friday",
   "Saturday"
 ];
-let day = date.getDay();
+//let day = date.getDay();
+let day = days[date.getDay()];
 let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes(); 
 let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
 return `${day} ${hours}:${minutes}`;
