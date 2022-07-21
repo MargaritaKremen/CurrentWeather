@@ -26,25 +26,27 @@ function displayForecast(response){
    
    let forecastElement = document.querySelector("#forecast");
    let forecastHTML = "";
-  
+    let iconFileName = ""; 
    forecast.forEach(function (forecastDay, index){
     if (index < 6) {
-    forecastHTML = forecastHTML +
-       ` 
+       iconFileName = "src/images/"+forecastDay.weather[0].icon +".png";
+       console.log(iconFileName);
+       forecastHTML = forecastHTML +
+      `
        <ul class="list-group list-group-horizontal-sm">
        <li class="list-group-item col1">
        <img src="http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
-      }@2x.png" alt=""
-      width="42"/>  
-      ${formatDay(forecastDay.dt)} - ${forecastDay.weather[0].main} 
-       </li>
-       <li class="list-group-item col2">${Math.round(
+        }@2x.png" alt=""
+        width="42"/>  
+        ${formatDay(forecastDay.dt)} - ${forecastDay.weather[0].main} 
+        </li>
+        <li class="list-group-item col2">${Math.round(
         forecastDay.temp.max
-      )}°/${Math.round(
+        )}°/${Math.round(
         forecastDay.temp.min
-      )}°</li>
-       </ul>
+        )}°</li>
+        </ul>
        `;
       }
    });
