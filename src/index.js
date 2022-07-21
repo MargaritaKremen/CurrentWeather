@@ -13,8 +13,46 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(geolocation);
 }
 
+
+function displayForecast(response){
+  console.log(response.data.daily);
+   //let forecast = response.data.daily;
+   
+   let forecastElement = document.querySelector("#forecast");
+   let forecastHTML = "";
+   let days = [
+     "Sunday",
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday"
+   ];
+   days.forEach(function(day){
+ forecastHTML = forecastHTML +
+       ` 
+       <ul class="list-group list-group-horizontal-sm">
+       <li class="list-group-item col1">
+       <img src="images/image2.png" class="imgSun" /> Mon-Sun
+       </li>
+       <li class="list-group-item col2">25°/14°</li>
+       </ul>
+       `;
+ 
+   })
+   
+   forecastElement.innerHTML = forecastHTML;
+ }
+
+function getForecast(coordinates) {
+  let apiKey = "f3a4c7fd1572e38d1a0b0f724e0e0218";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+  //console.log(apiUrl);
+}
+
 function displayTemperature(response) {
-  console.log(response);
+  
   let cityElement = response.data.name;
   let h1 = document.querySelector(".fontHead");  
   h1.innerHTML = `${cityElement}`;
@@ -42,6 +80,7 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  getForecast(response.data.coord);
 }
 
 function search(city) {   //add
@@ -96,31 +135,7 @@ let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes(); // 0,1,2,
 let hourses = (date.getHours() < 10 ? "0" : "") + date.getHours();
 let h2 = document.querySelector("h2");
 h2.innerHTML = ` ${days[day]}    ${hourses}:${minutes}`;
-function displayForecast(){
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = "";
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday"
-  ];
-  days.forEach(function(day){
-forecastHTML = forecastHTML +
-      ` 
-      <ul class="list-group list-group-horizontal-sm">
-      <li class="list-group-item col1">
-      <img src="images/image2.png" class="imgSun" /> Mon-Sun
-      </li>
-      <li class="list-group-item col2">25°/14°</li>
-      </ul>
-      `;
 
-  })
-  
-  forecastElement.innerHTML = forecastHTML;
-}
+
 search("Estoril");
-displayForecast();
+//displayForecast();
