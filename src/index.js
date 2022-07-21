@@ -13,29 +13,34 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(geolocation);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[day];
+}
 function displayForecast(response){
   console.log(response.data.daily);
-   //let forecast = response.data.daily;
+   let forecast = response.data.daily;
    
    let forecastElement = document.querySelector("#forecast");
    let forecastHTML = "";
-   let days = [
-     "Sunday",
-     "Monday",
-     "Tuesday",
-     "Wednesday",
-     "Thursday",
-     "Friday"
-   ];
-   days.forEach(function(day){
+  
+   days.forEach(function(forecastDay){
  forecastHTML = forecastHTML +
        ` 
        <ul class="list-group list-group-horizontal-sm">
        <li class="list-group-item col1">
-       <img src="images/image2.png" class="imgSun" /> Mon-Sun
+       <img src="http://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png" /> ${forecastDay.dt}
        </li>
-       <li class="list-group-item col2">25°/14°</li>
+       <li class="list-group-item col2">${Math.round(
+        forecastDay.temp.max
+      )}°/${Math.round(
+        forecastDay.temp.min
+      )}°</li>
        </ul>
        `;
  
@@ -80,6 +85,9 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  let dateElement = document.querySelector("h2");
+//h2.innerHTML = ` ${days[day]}    ${hourses}:${minutes}`;
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
   getForecast(response.data.coord);
 }
 
@@ -120,6 +128,7 @@ function tempF(event) {
 let linkF = document.querySelector("#tempF");
 linkF.addEventListener("click", tempF);
 
+function formatDate(timestamp) {
 let date = new Date();
 let days = [
   "Sunday",
@@ -131,10 +140,10 @@ let days = [
   "Saturday"
 ];
 let day = date.getDay();
-let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes(); // 0,1,2, 12
-let hourses = (date.getHours() < 10 ? "0" : "") + date.getHours();
-let h2 = document.querySelector("h2");
-h2.innerHTML = ` ${days[day]}    ${hourses}:${minutes}`;
+let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes(); 
+let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
+return `${day} ${hours}:${minutes}`;
+}
 
 
 search("Estoril");
