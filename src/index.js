@@ -37,7 +37,7 @@ function displayForecast(response){
         forecastDay.weather[0].icon
       }@2x.png" alt=""
       width="42"/>  
-      ${formatDay(forecastDay.dt)}  <span><small> ${forecast.weather[0].main} </small></span>
+      ${formatDay(forecastDay.dt)}  <span id = "col1-wheather> ${forecast.weather[0].main} </span>
        </li>
        <li class="list-group-item col2">${Math.round(
         forecastDay.temp.max
