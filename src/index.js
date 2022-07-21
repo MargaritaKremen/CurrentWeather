@@ -35,9 +35,7 @@ function displayForecast(response){
       `
        <ul class="list-group list-group-horizontal-sm">
        <li class="list-group-item col1">
-       <img src="http://openweathermap.org/img/wn/${
-        forecastDay.weather[0].icon
-        }@2x.png" alt=""
+       <img src="iconFileName" alt=""
         width="42"/>  
         ${formatDay(forecastDay.dt)} - ${forecastDay.weather[0].main} 
         </li>
