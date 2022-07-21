@@ -29,7 +29,7 @@ function displayForecast(response){
     let iconFileName = ""; 
    forecast.forEach(function (forecastDay, index){
     if (index < 6) {
-       iconFileName = "/images/"+forecastDay.weather[0].icon +".png";
+       iconFileName = "images/"+forecastDay.weather[0].icon +".png";
        console.log(iconFileName);
        forecastHTML = forecastHTML +
       `
