@@ -28,13 +28,13 @@ function displayForecast(response){
    let forecastHTML = "";
   
    forecast.forEach(function (forecastDay, index){
- forecastHTML = forecastHTML +
+    forecastHTML = forecastHTML +
        ` 
        <ul class="list-group list-group-horizontal-sm">
        <li class="list-group-item col1">
        <img src="http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
-      }@2x.png" />  ${formatDay(forecastDay.dt)} ` - ` ${response.data.weather[0].main}
+      }@2x.png" />  ${formatDay(forecastDay.dt)}  ${response.data.weather[0].main}
        </li>
        <li class="list-group-item col2">${Math.round(
         forecastDay.temp.max
