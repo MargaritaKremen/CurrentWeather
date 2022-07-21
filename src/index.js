@@ -28,6 +28,7 @@ function displayForecast(response){
    let forecastHTML = "";
   
    forecast.forEach(function (forecastDay, index){
+    if (index < 6) {
     forecastHTML = forecastHTML +
        ` 
        <ul class="list-group list-group-horizontal-sm">
@@ -43,8 +44,8 @@ function displayForecast(response){
       )}°</li>
        </ul>
        `;
- 
-   })
+      }
+   });
    
    forecastElement.innerHTML = forecastHTML;
  }
@@ -53,7 +54,7 @@ function getForecast(coordinates) {
   let apiKey = "f3a4c7fd1572e38d1a0b0f724e0e0218";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-  //console.log(apiUrl);
+  console.log(apiUrl);
 }
 
 function displayTemperature(response) {
