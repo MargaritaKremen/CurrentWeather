@@ -57,9 +57,7 @@ h2 {
   text-align: center;
   margin-bottom: 2em;
 }
-h4 {
-  margin-left: 3em;
-}
+
 .imgSun {
   margin-right: 5px;
   height: 64px;
@@ -88,7 +86,9 @@ h4 {
   background-color: rgba(95, 158, 160, 0.027);
   font-size: 30pt;
 }
-
+.col1-wheather{
+  font-size: 25pt;
+}
 .formSearch {
   display: flex;
   flex-direction: row;
@@ -145,11 +145,11 @@ h5{
 
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .weather-forecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .weather-forecast-temperatures {
