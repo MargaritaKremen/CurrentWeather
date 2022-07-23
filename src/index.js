@@ -85,10 +85,10 @@ function displayTemperature(response) {
     "src",
   // `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/${response.data.weather[0].icon}.png?165858????`
    searchIcon(response.data.weather[0].icon)
-   console.log(response.data.weather[0].icon);
+   
    //`images/${response.data.weather[0].icon}.png`  
   );
-
+console.log(response.data.weather[0].icon);
   let dateElement = document.querySelector("h2");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   getForecast(response.data.coord);
@@ -147,6 +147,7 @@ let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
 return `${day} ${hours}:${minutes}`;
 }
+
 function searchIcon(icon){
 console.log(icon);
   if (icon === "01d") {
