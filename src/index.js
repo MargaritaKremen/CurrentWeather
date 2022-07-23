@@ -25,12 +25,10 @@ function displayForecast(response){
    let forecast = response.data.daily;
    
    let forecastElement = document.querySelector("#forecast");
-   let forecastHTML = "";
-    let iconFileName = ""; 
+   let forecastHTML = "";   
    forecast.forEach(function (forecastDay, index){
-    if (index < 6) {
-       iconFileName = "images/"+forecastDay.weather[0].icon +".png";
-       console.log(iconFileName);
+    if (index < 6) {       
+       
        forecastHTML = forecastHTML +
       `
        <ul class="list-group list-group-horizontal-sm">
