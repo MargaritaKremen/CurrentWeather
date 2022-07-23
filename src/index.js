@@ -32,7 +32,7 @@ function displayForecast(response){
       `
         <ul class="list-group list-group-horizontal-sm">
         <li class="list-group-item col1">
-        <img src= "images/${forecastDay.weather[0].icon }.png" alt="" 
+        <img src= " ${searchIcon(forecastDay.weather[0].icon)}" alt="" 
         width="42"/>          
         ${formatDay(forecastDay.dt)} - ${forecastDay.weather[0].main} 
         </li>
@@ -42,7 +42,7 @@ function displayForecast(response){
         forecastDay.temp.min
         )}°</li>
         </ul>
-       `;
+       `;  // <img src= "images/${forecastDay.weather[0].icon }.png" alt="" 
       }
    });
    
@@ -152,41 +152,21 @@ function searchIcon(icon){
 console.log(icon);
   if (icon === "01d") {
     iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (icon === "02d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "03d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "04d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "09d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "10d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "11d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "13d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "50d") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "01n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "02n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "03n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "04n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "09n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "10n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "11n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "13n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else if (iconActualElementAPI === "50n") {
-    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
-  } else {
+     } else if (icon === "01n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/396/original/01n.png?1658582705";
+     } else if (icon === "02d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/397/original/02d.png?1658582749";
+     } else if (icon === "02n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/398/original/02n.png?1658582810";
+     } else if (icon === "03d" || icon === "03n" || icon === "04d" || icon === "04n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/399/original/03d.png?1658582819";
+     } else if (icon === "09d" || icon === "09n" || icon === "10d" || icon === "10n" || icon === "11d" || icon === "11n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/403/original/09d.png?1658582865";
+     } else if (icon === "13d"|| icon === "13n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/409/original/13d.png?1658582918";
+     } else if (icon === "50d"|| icon === "50n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/411/original/50d.png?1658582935";
+     } else {
     iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
   }  
   return iconLink;
