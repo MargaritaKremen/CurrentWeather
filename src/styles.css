@@ -63,7 +63,11 @@ h2 {
   height: "42";
   width: "42";
 }
-
+#icon {
+  margin-right: 5px;
+  height: "42";
+  width: "42";
+}
 .col1 {
   display: block;
   border-radius: 20px;
