@@ -63,7 +63,11 @@ h2 {
   height: 64px;
   width: 64px;
 }
-
+.imgSunHead {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
 .col1 {
   display: block;
   border-radius: 20px;
