@@ -1,5 +1,6 @@
 body {
   background-color:  #d6dee0;
+  height: 555px;
 }
 .application-body-wrapper {  
   max-width: 800px;
@@ -15,8 +16,7 @@ body {
   );
   box-shadow: rgba(177, 161, 173, 0.493) 0px 8px 8px 0;
   border-radius: 10px;
-  color: rgba(21, 35, 36, 0.836);
-  height: 555px;
+  color: rgba(21, 35, 36, 0.836); 
 }
 h1 {
   text-align: center;
