@@ -83,7 +83,9 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-   `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/${response.data.weather[0].icon}.png?1658581877`
+  // `https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/${response.data.weather[0].icon}.png?165858????`
+   searchIcon(response.data.weather[0].icon)
+   console.log(response.data.weather[0].icon);
    //`images/${response.data.weather[0].icon}.png`  
   );
 
@@ -145,5 +147,47 @@ let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
 return `${day} ${hours}:${minutes}`;
 }
-
+function searchIcon(icon){
+console.log(icon);
+  if (icon === "01d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (icon === "02d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "03d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "04d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "09d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "10d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "11d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "13d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "50d") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "01n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "02n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "03n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "04n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "09n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "10n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "11n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "13n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else if (iconActualElementAPI === "50n") {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  } else {
+    iconLink = "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/01d.png?1658581877";
+  }  
+  return iconLink;
+}
 search("Estoril");
