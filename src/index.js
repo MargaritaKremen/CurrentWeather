@@ -33,7 +33,7 @@ function displayForecast(response){
       `
        <ul class="list-group list-group-horizontal-sm">
        <li class="list-group-item col1">
-       <img src= "images/${forecastDay.weather[0].icon }.png" alt="" 
+       <img src= "images/"+${forecastDay.weather[0].icon }+".png" alt="" 
         width="42"/>          
         ${formatDay(forecastDay.dt)} - ${forecastDay.weather[0].main} 
         </li>
