@@ -2,7 +2,7 @@ body {
   background-color:  #d6dee0;
 }
 .application-body-wrapper {  
-  width: 60%;
+  width: 80%;
   margin: 30px auto;
 }
 .application-body {
@@ -63,11 +63,7 @@ h2 {
   height: 64px;
   width: 64px;
 }
-.imgSunHead {
-  margin-right: 5px;
-  height: 64px;
-  width: 64px;
-}
+
 .col1 {
   display: block;
   border-radius: 20px;
