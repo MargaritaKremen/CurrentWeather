@@ -83,7 +83,8 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-   `images/${response.data.weather[0].icon}.png`  
+   " https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/394/original/"+"01d.png"+"?1658581877"
+   //`images/${response.data.weather[0].icon}.png`  
   );
 
   let dateElement = document.querySelector("h2");
