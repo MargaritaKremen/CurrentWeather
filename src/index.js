@@ -26,10 +26,8 @@ function displayForecast(response){
    
    let forecastElement = document.querySelector("#forecast");
    let forecastHTML = "";
-  // let iconFileName = ""; 
    forecast.forEach(function (forecastDay, index){
     if (index < 6) {
-      // iconFileName = "images/"+forecastDay.weather[0].icon +".png";
        forecastHTML = forecastHTML +
       `
         <ul class="list-group list-group-horizontal-sm">
