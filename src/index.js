@@ -82,13 +82,15 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");  
   windElement.innerHTML = Math.round(response.data.wind.speed);
 
-  
+  let iconFileName = ""; 
+  iconFileName = "images/"+forecastDay.weather[0].icon +".png";
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+ /*   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`*/
+ ${iconFileName}
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt");//, response.data.weather[0].description
 
   let dateElement = document.querySelector("h2");
 //h2.innerHTML = ` ${days[day]}    ${hourses}:${minutes}`;
