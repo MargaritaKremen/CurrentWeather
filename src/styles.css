@@ -2,7 +2,7 @@ body {
   background-color:  #d6dee0;
 }
 .application-body-wrapper {  
-  width: 80%;
+  max-width: 800px;
   margin: 30px auto;
 }
 .application-body {
@@ -16,6 +16,7 @@ body {
   box-shadow: rgba(177, 161, 173, 0.493) 0px 8px 8px 0;
   border-radius: 10px;
   color: rgba(21, 35, 36, 0.836);
+  height: 555px;
 }
 h1 {
   text-align: center;
@@ -58,11 +59,6 @@ h2 {
   margin-bottom: 2em;
 }
 
-.imgSun {
-  margin-right: 5px;
-  height: "42";
-  width: "42";
-}
 #icon {
   margin-right: 5px;
   height: "42";
