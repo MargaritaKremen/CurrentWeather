@@ -26,16 +26,15 @@ function displayForecast(response){
    
    let forecastElement = document.querySelector("#forecast");
    let forecastHTML = "";
-    let iconFileName = ""; 
+  // let iconFileName = ""; 
    forecast.forEach(function (forecastDay, index){
     if (index < 6) {
-       iconFileName = "images/"+forecastDay.weather[0].icon +".png";
-       console.log(iconFileName);
+      // iconFileName = "images/"+forecastDay.weather[0].icon +".png";
        forecastHTML = forecastHTML +
       `
-       <ul class="list-group list-group-horizontal-sm">
-       <li class="list-group-item col1">
-       <img src= "images/${forecastDay.weather[0].icon }.png" alt="" 
+        <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item col1">
+        <img src= "images/${forecastDay.weather[0].icon }.png" alt="" 
         width="42"/>          
         ${formatDay(forecastDay.dt)} - ${forecastDay.weather[0].main} 
         </li>
@@ -51,7 +50,7 @@ function displayForecast(response){
    
    forecastElement.innerHTML = forecastHTML;
  }
-// ${response.data.weather[0].main}
+
 function getForecast(coordinates) {
   let apiKey = "f3a4c7fd1572e38d1a0b0f724e0e0218";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -67,7 +66,6 @@ function displayTemperature(response) {
   h1.innerHTML = `${cityElement}`;
 
   let temperatureElement = document.querySelector(".fontC");
-    console.log(temperatureElement);
   celsiusTemperature = Math.round(response.data.main.temp);
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
@@ -87,14 +85,11 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-   // `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-   `images/${response.data.weather[0].icon}.png`
+   `images/${response.data.weather[0].icon}.png`  
   );
- // iconElement.setAttribute("alt", response.data.weather[0].description);
 
   let dateElement = document.querySelector("h2");
-//h2.innerHTML = ` ${days[day]}    ${hourses}:${minutes}`;
-dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   getForecast(response.data.coord);
 }
 
@@ -145,14 +140,11 @@ let days = [
   "Thursday",
   "Friday",
   "Saturday"
-];
-//let day = date.getDay();
+  ];
 let day = days[date.getDay()];
 let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes(); 
 let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
 return `${day} ${hours}:${minutes}`;
 }
 
-
 search("Estoril");
-//displayForecast();
